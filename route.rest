@@ -1,0 +1,29 @@
+GET http://localhost:3000/subscribers 
+
+### // used to separate the requests & this allows us to know our routing is working & call it directly from Visual Studio Code
+
+GET http://localhost:3000/subscribers/5e94f5da550f8308c058e8d8
+
+
+### // testing our creation of a new subscriber, using POST, to our local host on port 3000 in subscribers with Blank Line, and our json (syntax and information we assign in our json syntax)
+### // we want our server to know we our sending information in json so we set the content type to application/json
+POST http://localhost:3000/subscribers 
+Content-Type: application/json 
+
+{
+ 
+ "subscribedToChannel": "Web Dev Simplified"
+}
+
+### //Delete our Subscriber
+
+DELETE http://localhost:3000/subscribers/5e94f5da550f8308c058e8d8
+
+### //Update our Subscriber //we use content-type because we are updating information and tell the database what type of content we will be updating (application/json)
+
+PATCH http://localhost:3000/subscribers/5e94f752afd2d97114fc2f91
+Content-Type: application/json 
+
+{
+    "name": "New Name"
+}
